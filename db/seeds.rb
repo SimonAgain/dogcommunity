@@ -77,3 +77,4 @@ d2.photos << p2
 
 #seeding the association dogs and users... Many to many..
 d1.users << o1 << w1
+d2.users << o2 << w1

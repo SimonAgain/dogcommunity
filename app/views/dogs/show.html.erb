@@ -1,2 +1,9 @@
-<h1>Dogs#show</h1>
-<p>Find me in app/views/dogs/show.html.erb</p>
+<h2><%= @dog.name %></h2>
+
+<p>
+  <strong>Breed:</strong>
+  <%= @dog.breed %>
+</p>
+<br>
+
+<%= image_tag @dog.photos.first.image, alt: @dog.name, class: 'dog_image' %>

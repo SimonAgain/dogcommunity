@@ -9,7 +9,7 @@
       <ul>
         <% w.dogs.each do |d| %>
         <li>
-          <%= link_to d.name, dogs_show_path(d.id) %>
+          <%= link_to d.name, dog_path(d.id) %>
         </li>
         <% end %>
       </ul>

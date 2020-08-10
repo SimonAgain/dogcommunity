@@ -1,0 +1,18 @@
+img.user_image {
+  max-height: 300px;
+}
+
+div.image_left, div.bio_right {
+  display: inline-block;
+}
+
+div.client_dogs {
+  display: inline-block;
+  text-align: center;
+  margin: 10px;
+}
+
+img.dog_thumbs {
+  max-height: 50px;
+  /* max-width: 73px; */
+}

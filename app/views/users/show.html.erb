@@ -1,2 +1,45 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h2>Walker Profile:</h2>
+
+<div class="top">
+  <div class="image_left">
+    <%= image_tag @walker.image, alt: @walker.name, class:'user_image' %>
+  </div>
+  <div class="bio_right">
+
+    <p>
+      <strong>Name:</strong>
+      <%= @walker.name %>
+    </p>
+    <p>
+      <strong>Email:</strong>
+      <%= @walker.email %>
+    </p>
+    <p>
+      <strong>Phone:</strong>
+      <%= @walker.phone_no %>
+    </p>
+    <p>
+      <strong>Location:</strong>
+      <%= @walker.address %>
+    </p>
+    <p>
+      <strong>About, <%= @walker.name %>:</strong>
+      blah blah blah blah
+    </p>
+
+
+  </div>
+</div>
+
+<div class="bottom">
+  <p>
+    <strong>Current Clients:</strong>
+    <% @walker.dogs.each do |d| %>
+    <div class="client_dogs">
+      <%= link_to image_tag(d.photos.first.image, alt: d.name, class:'dog_thumbs'), dog_path(d.id)  %>
+      <br>
+      <%= link_to d.name, dog_path(d.id) %>
+    </div>
+    <% end %>
+  </p>
+</div>

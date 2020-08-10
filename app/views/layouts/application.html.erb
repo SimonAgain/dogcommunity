@@ -10,10 +10,27 @@
   </head>
 
   <body>
+    <h1>Walk the Dog</h1>
+    <nav>
+      <div class="login">
+        <% if @current_user.present?  %> <!-- that's verifiying session id. -->
+          Hello, <%= @current_user.name %> <!-- -->
 
+          <%= link_to 'Logout', login_path, method: 'delete' %>
+        <% else %>
+          <%= link_to 'Login', login_path %>
 
-    <%= yield %>
+          <%= link_to 'Sign Up', new_user_path %>
+        <% end %>
+      </div>
+    </nav>
+    <hr>
 
-    
+  <%= yield %>
+
+  <footer>
+    <hr>
+    &copy; Hammer Time 2020
+  </footer>
   </body>
 </html>

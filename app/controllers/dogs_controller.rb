@@ -1,4 +1,5 @@
 class DogsController < ApplicationController
+  
   def new
   end
 
@@ -9,6 +10,7 @@ class DogsController < ApplicationController
   end
 
   def show
+    @dog = Dog.find params[:id]
   end
 
   def edit
