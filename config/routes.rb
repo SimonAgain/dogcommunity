@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  get 'dogs/new'
+  get 'dogs/create'
+  get 'dogs/index'
+  get 'dogs/show'
+  get 'dogs/edit'
+  get 'dogs/update'
+  get 'dogs/destroy'
   # get 'users/new'
   # get 'users/create'
   # get 'users/index'

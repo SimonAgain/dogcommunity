@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class DogsController < ApplicationController
   def new
   end
 
@@ -6,7 +6,6 @@ class UsersController < ApplicationController
   end
 
   def index
-    @walkers = User.where user_type: 'walker'
   end
 
   def show
