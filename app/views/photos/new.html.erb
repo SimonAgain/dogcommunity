@@ -3,7 +3,7 @@
 <%= form_for @photo do |f| %>
 
   <%= f.label :dog_id, 'Select a dog' %>
-  <%= f.select :dog_id, @user.dogs %>
+  <%= f.select :dog_id, @user.dogs.pluck(:name, :id) %>
   <br><br>
 
   <%= f.label :image, 'Photo' %> <br>

@@ -1,4 +1,4 @@
-<h2>Owner Profile:</h2>
+<h2>Walker Profile:</h2>
 
 <div class="top">
   <div class="image_left">
@@ -23,31 +23,29 @@
       <%= @user.phone_no %>
     </p>
     <p>
-      <strong>Location:</strong>
+      <strong>Suburb:</strong>
       <%= @user.address %>
     </p>
-    <p>
+    <p class="bio">
       <strong>Bio:</strong>
       <%= @user.bio %>
     </p>
 
+    <%= link_to 'Edit Profile', edit_user_path(@user.id), id:'edit_link' %>
 
+    <%= link_to 'Add a Client', dogs_path, id:'add_client_link' %>
 
-
+    <%= link_to 'Add Photo', new_photo_path, id: 'add_photo_link_w' %>
 
   </div> <!-- bio_right -->
 </div>
 
 <div class="bottom">
   <p>
-    <strong>Owner's Dogs:</strong>
+    <strong>Current Clients:</strong>
     <% @user.dogs.each do |d| %>
     <div class="client_dogs">
-      <% if d.image? %>
-        <%= link_to image_tag(d.image, alt: d.name, class:'dog_thumbs'), dog_path(d.id)  %>
-      <% else %>
-        <%= link_to image_tag("https://kwsmdigital.com/wp-content/uploads/2018/06/profile-placeholder-dog-pilot-3.jpg", alt:'placeholder image',  class:'dog_thumbs'), dog_path(d.id) %>
-      <% end %>
+      <%= link_to image_tag(d.image, alt: d.name, class:'dog_thumbs'), dog_path(d.id)  %>
       <br>
       <%= link_to d.name, dog_path(d.id) %>
     </div>

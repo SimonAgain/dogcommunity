@@ -39,12 +39,12 @@ class UsersController < ApplicationController
     user = User.find params[:id]
 
     if user!= @current_user
-      redirect_to user_path
+      redirect_to home_path
       return
     end
 
     user.update user_params
-    redirect_to user_path
+    redirect_to home_path
   end # update
 
   def destroy

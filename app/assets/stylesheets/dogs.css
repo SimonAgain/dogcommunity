@@ -5,3 +5,9 @@ img.profile_image {
 img.dog_photos {
   max-height: 300px;
 }
+
+#add_photo_link { /*on the dog show page */
+  position: fixed;
+  top: 110px;
+  right: 10px;
+}

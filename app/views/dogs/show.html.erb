@@ -12,7 +12,7 @@
   <strong>Owner:</strong>
   <% @dog.users.each do |u| %>
     <% if u.owner? %>  <!--find and link to the owner -->
-      <%= link_to u.name, user_path(u.id) %>
+      <%= link_to u.name, home_path %>
     <% end %>
   <% end %>
 </p>
@@ -20,7 +20,7 @@
   <strong>Walker/s:</strong>
   <% @dog.users.each do |u| %>
     <% if u.walker? %>  <!--find and link to walkers -->
-      <%= link_to u.name, user_path(u.id) %>
+      <%= link_to u.name, home_path %>
     <% end %>
   <% end %>
 </p>

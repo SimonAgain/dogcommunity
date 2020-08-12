@@ -36,18 +36,29 @@ img.dog_thumbs {  /* the thumbnails of dogs */
 
 #add_dog_link { /* on owner page */
   position: fixed;
-  top: 130px;
+  top: 129px;
   right: 12px;
 }
 
 #add_client_link { /* on walker page */
   position: fixed;
-  top: 130px;
+  top: 129px;
   right: 12px;
 }
 
-#add_photo_link { /*on the dog show page */
+#add_photo_link_w { /*on the walker home page */
   position: fixed;
-  top: 110px;
+  top: 150px;
   right: 10px;
+}
+#add_photo_link_o { /*on the owner home page */
+  position: fixed;
+  top: 170px;
+  right: 10px;
+}
+
+#find_walker_link { /*on owner page */
+  position: fixed;
+  top: 150px;
+  right: 12px;
 }

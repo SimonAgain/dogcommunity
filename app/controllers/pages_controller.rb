@@ -8,12 +8,12 @@ class PagesController < ApplicationController
   def home
     @u_id = session[:user_id]
 
-    # @user = User.find params[:id]
-    # if @user.owner?
-    #   render :owner_show
-    # else
-    #   render :walker_show
-    # end
-    
+    @user = User.find @u_id
+    if @user.owner?
+      render :owner_home
+    else
+      render :walker_home
+    end
+
   end # home
 end # PagesController

@@ -9,7 +9,7 @@ class DogsController < ApplicationController
     dog = Dog.create dog_params
     owner = User.find session[:user_id]
     dog.users << owner   # association
-    redirect_to user_path(owner)
+    redirect_to home_path
   end # create
 
   def index

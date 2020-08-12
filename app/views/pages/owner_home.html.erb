@@ -31,7 +31,13 @@
       <%= @user.bio %>
     </p>
 
+    <%= link_to 'Edit Profile', edit_user_path(@user.id), id:'edit_link' %>
 
+    <%= link_to 'Add a Dog', new_dog_path, id:'add_dog_link'  %>
+
+    <%= link_to 'Find Walker', users_path, id:'find_walker_link'  %>
+
+    <%= link_to 'Add Photo', new_photo_path, id: 'add_photo_link_o' %>
 
 
 
@@ -40,7 +46,7 @@
 
 <div class="bottom">
   <p>
-    <strong>Owner's Dogs:</strong>
+    <strong>Your Dogs:</strong>
     <% @user.dogs.each do |d| %>
     <div class="client_dogs">
       <% if d.image? %>
