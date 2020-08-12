@@ -1,3 +1,7 @@
-img.dog_image {
+img.profile_image {
+  max-height: 300px;
+}
+
+img.dog_photos {
   max-height: 300px;
 }

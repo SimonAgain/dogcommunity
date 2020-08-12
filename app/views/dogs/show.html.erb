@@ -28,7 +28,13 @@
 
 
 <% if @dog.image? %> <!--check if an image exists, else use a placeholder-->
-  <%= image_tag @dog.image, alt: @dog.name, class: 'dog_image' %>
+  <%= image_tag @dog.image, alt: @dog.name, class: 'profile_image' %>
 <% else %>
-  <%= image_tag "https://kwsmdigital.com/wp-content/uploads/2018/06/profile-placeholder-dog-pilot-3.jpg", alt: 'placeholder image', class: 'dog_image' %>
+  <%= image_tag "https://kwsmdigital.com/wp-content/uploads/2018/06/profile-placeholder-dog-pilot-3.jpg", alt: 'placeholder image', class: 'profile_image' %>
 <% end %>
+
+<% @dog.photos.each do |p| %>
+<%= image_tag p.image, alt: @dog.name, class:'dog_photos' %>
+<% end %>
+
+<%= link_to 'Add Photo', new_photo_path, id: 'add_photo_link' %>

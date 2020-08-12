@@ -1,0 +1,15 @@
+<h2>Add a Photo</h2>
+
+<%= form_for @photo do |f| %>
+
+  <%= f.label :dog_id, 'Select a dog' %>
+  <%= f.select :dog_id, @user.dogs %>
+  <br><br>
+
+  <%= f.label :image, 'Photo' %> <br>
+  <%= f.text_field :image %>
+  <br><br>
+
+  <%= f.submit 'Submit Edit'  %>
+
+<% end %>

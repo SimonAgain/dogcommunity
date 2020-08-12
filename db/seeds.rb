@@ -72,12 +72,16 @@ p2 = Photo.create!(
   dog_id: d1.id,
   image:  'https://usercontent2.hubstatic.com/14615541_f520.jpg'
 )
+p3 = Photo.create!(
+  dog_id: d1.id,
+  image:  'http://www.animal-photography.com/AP-SAG36V-LR-wm.jpg'
+)
 
 puts "Created #{Photo.count} photos"
 
 #seeding the association of 1 dog to many photos.
-d1.photos << p1
-d2.photos << p2
+# d1.photos << p1
+# d2.photos << p2
 
 #seeding the association dogs and users... Many to many..
 d1.users << o1 << w1

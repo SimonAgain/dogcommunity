@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  # get 'photos/new'
+  # get 'photos/create'
+  # get 'photos/index'
+  # get 'photos/show'
+  # get 'photos/edit'
+  # get 'photos/update'
+  # get 'photos/destroy'
   # get 'session/new'
   # get 'session/create'
   # get 'session/destroy'
@@ -37,6 +44,9 @@ Rails.application.routes.draw do
   ## CRUD for users ###
   resources :users
 
-  ## CRUD for users ###
+  ## CRUD for dogs ###
   resources :dogs
+
+  ## CRUD for photos ##
+  resources :photos
 end
