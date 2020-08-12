@@ -47,11 +47,15 @@ Dog.destroy_all
 
 d1 = Dog.create!(
   name:       'Boris',
-  breed:      'Cavalier mix'
+  breed:      'Cavalier mix',
+  bio:        "He's a good doggie",
+  image:      'http://www.animal-photography.com/AP-1PBTCY-LR-wm.jpg'
 )
 d2 = Dog.create!(
   name:       'Coco',
-  breed:      'Golden Retriever'
+  breed:      'Golden Retriever',
+  bio:        "She's a good doggie",
+  image:      'https://usercontent2.hubstatic.com/14615541_f520.jpg'
 )
 
 puts "Created #{Dog.count} dogs."

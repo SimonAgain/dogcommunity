@@ -1,0 +1,52 @@
+<h2>Walker Profile:</h2>
+
+<div class="top">
+  <div class="image_left">
+    <% if @user.image? %>
+      <%= image_tag @user.image, alt: @user.name, class:'user_image' %>
+    <% else %>
+      <%= image_tag "https://upload.wikimedia.org/wikipedia/en/b/b1/Portrait_placeholder.png", alt:'blank photo', class:'user_image' %>
+    <% end %>
+  </div>
+  <div class="bio_right">
+
+    <p>
+      <strong>Name:</strong>
+      <%= @user.name %>
+    </p>
+    <p>
+      <strong>Email:</strong>
+      <%= @user.email %>
+    </p>
+    <p>
+      <strong>Phone:</strong>
+      <%= @user.phone_no %>
+    </p>
+    <p>
+      <strong>Suburb:</strong>
+      <%= @user.address %>
+    </p>
+    <p class="bio">
+      <strong>Bio:</strong>
+      <%= @user.bio %>
+    </p>
+
+    <%= link_to 'Edit Profile', edit_user_path(@user.id), id:'edit_link' %>
+
+    <%= link_to 'Add a Client', dogs_path, id:'add_client_link' %>
+
+  </div> <!-- bio_right -->
+</div>
+
+<div class="bottom">
+  <p>
+    <strong>Current Clients:</strong>
+    <% @user.dogs.each do |d| %>
+    <div class="client_dogs">
+      <%= link_to image_tag(d.photos.first.image, alt: d.name, class:'dog_thumbs'), dog_path(d.id)  %>
+      <br>
+      <%= link_to d.name, dog_path(d.id) %>
+    </div>
+    <% end %>
+  </p>
+</div>

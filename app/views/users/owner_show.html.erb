@@ -1,0 +1,56 @@
+<h2>Owner Profile:</h2>
+
+<div class="top">
+  <div class="image_left">
+    <% if @user.image? %>
+      <%= image_tag @user.image, alt: @user.name, class:'user_image' %>
+    <% else %>
+      <%= image_tag "https://upload.wikimedia.org/wikipedia/en/b/b1/Portrait_placeholder.png", alt:'blank photo', class:'user_image' %>
+    <% end %>
+  </div>
+  <div class="bio_right">
+
+    <p>
+      <strong>Name:</strong>
+      <%= @user.name %>
+    </p>
+    <p>
+      <strong>Email:</strong>
+      <%= @user.email %>
+    </p>
+    <p>
+      <strong>Phone:</strong>
+      <%= @user.phone_no %>
+    </p>
+    <p>
+      <strong>Location:</strong>
+      <%= @user.address %>
+    </p>
+    <p>
+      <strong>Bio:</strong>
+      <%= @user.bio %>
+    </p>
+
+    <%= link_to 'Edit Profile', edit_user_path(@user.id), id:'edit_link' %>
+
+    <%= link_to 'Add a Dog', new_dog_path, id:'add_dog_link'  %>
+
+  </div> <!-- bio_right -->
+</div>
+
+<div class="bottom">
+  <p>
+    <strong>Your Dogs:</strong>
+    <% @user.dogs.each do |d| %>
+    <div class="client_dogs">
+      <% if d.image? %>
+        <%= link_to image_tag(d.image, alt: d.name, class:'dog_thumbs'), dog_path(d.id)  %>
+      <% else %>
+        <%= link_to image_tag("https://kwsmdigital.com/wp-content/uploads/2018/06/profile-placeholder-dog-pilot-3.jpg", alt:'placeholder image',  class:'dog_thumbs'), dog_path(d.id) %>
+      <% end %>
+      <br>
+      <%= link_to d.name, dog_path(d.id) %>
+    </div>
+    <% end %>
+  </p>
+</div>

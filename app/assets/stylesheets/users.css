@@ -1,18 +1,47 @@
 img.user_image {
   max-height: 300px;
+  max-width: 300px;
 }
 
 div.image_left, div.bio_right {
   display: inline-block;
+    margin-left: 10px;
 }
 
-div.client_dogs {
+div.bio_right {
+  max-width: 500px;
+  margin-left: 10px;
+}
+
+/* .bio  {
+  display: inline-block;
+} */
+
+div.client_dogs {    /* list of dogs AND names.*/
   display: inline-block;
   text-align: center;
   margin: 10px;
 }
 
-img.dog_thumbs {
+img.dog_thumbs {  /* the thumbnails of dogs */
   max-height: 50px;
   /* max-width: 73px; */
+}
+
+#edit_link {     /* Edit Profile link */
+  position: fixed;
+  top: 110px;
+  right: 10px;
+}
+
+#add_dog_link {
+  position: fixed;
+  top: 130px;
+  right: 12px;
+}
+
+#add_client_link {
+  position: fixed;
+  top: 130px;
+  right: 12px;
 }

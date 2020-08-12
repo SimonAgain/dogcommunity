@@ -1,2 +1,46 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h2> Edit Profile</h2>
+
+
+<!-- #form_for @blah, html:{multipart: true} do |f| -->
+
+<!-- #f.cl_image_upload :image -->
+
+<%= form_for @user do |f| %>
+
+  <%= f.label :name %> <br>
+  <%= f.text_field :name %>
+  <br><br>
+  <%= f.label :email %> <br>
+  <%= f.text_field :email %>
+  <br><br>
+  <%= f.label :user_type, 'Account Type' %>
+  <%= f.select :user_type, User.user_types.keys %>
+  <br><br>
+
+  <%= f.label :password %> <br>
+  <%= f.password_field :password %>
+  <br><br>
+
+  <%= f.label :password_confirmation %> <br>
+  <%= f.password_field :password_confirmation %>
+  <br><br>
+
+  <%= f.label :phone_no, 'Phone No:' %> <br>
+  <%= f.text_field :phone_no %>
+  <br><br>
+
+  <%= f.label :address, 'Suburb' %> <br>
+  <%= f.text_field :address %>
+  <br><br>
+
+  <%= f.label :image, 'Profile Image' %> <br>
+  <%= f.text_field :image %>
+  <br><br>
+
+  <%= f.label :bio %> <br>
+  <%= f.text_area :bio %>
+  <br><br>
+
+  <%= f.submit 'Submit Edit'  %>
+
+<% end %>

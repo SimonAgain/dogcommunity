@@ -1,18 +1,12 @@
-<h2>Find a Walker</h2>
+<h2>List of dog walkers</h2>
 
 <p>
 
 <ul>
   <% @walkers.each do |w| %>
   <li>
-    <%= link_to w.name, user_path(w.id) %>
-      <ul>
-        <% w.dogs.each do |d| %>
-        <li>
-          <%= link_to d.name, dog_path(d.id) %>
-        </li>
-        <% end %>
-      </ul>
+    <%= link_to w.name, user_path(w.id) %> - <%= link_to w.address, user_path(w.id) %>
+
   </li>
   <% end %>
 </ul>

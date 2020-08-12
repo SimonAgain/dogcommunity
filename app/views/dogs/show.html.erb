@@ -4,6 +4,31 @@
   <strong>Breed:</strong>
   <%= @dog.breed %>
 </p>
+<p>
+  <strong>About:</strong>
+  <%= @dog.bio %>
+</p>
+<p>
+  <strong>Owner:</strong>
+  <% @dog.users.each do |u| %>
+    <% if u.owner? %>  <!--find and link to the owner -->
+      <%= link_to u.name, user_path(u.id) %>
+    <% end %>
+  <% end %>
+</p>
+<p>
+  <strong>Walker/s:</strong>
+  <% @dog.users.each do |u| %>
+    <% if u.walker? %>  <!--find and link to walkers -->
+      <%= link_to u.name, user_path(u.id) %>
+    <% end %>
+  <% end %>
+</p>
 <br>
 
-<%= image_tag @dog.photos.first.image, alt: @dog.name, class: 'dog_image' %>
+
+<% if @dog.image? %> <!--check if an image exists, else use a placeholder-->
+  <%= image_tag @dog.image, alt: @dog.name, class: 'dog_image' %>
+<% else %>
+  <%= image_tag "https://kwsmdigital.com/wp-content/uploads/2018/06/profile-placeholder-dog-pilot-3.jpg", alt: 'placeholder image', class: 'dog_image' %>
+<% end %>
