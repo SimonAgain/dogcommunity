@@ -22,20 +22,29 @@ o1 = User.create!(
 o2 = User.create!(
   name:       'Deano',
   user_type:  'owner',
-  email:      'deano@deano.con',
+  email:      'deano@deano.com.au',
   password:   'chicken',
   phone_no:   '0410483121',
   address:    'North Sydney',
-  image:      ''
+  image:      'https://images.unsplash.com/photo-1497316730643-415fac54a2af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80'
 )
 
 w1 = User.create!(
-    name:       'Fiona',
+    name:       'Fiona1',
     user_type:  'walker',
-    email:      'fiona@fiona.com',
+    email:      'fiona1@fiona.com',
     password:   'chicken',
     phone_no:   '0413020324',
     address:    'Hurstville',
+    image:      'https://i.ebayimg.com/images/g/aWoAAOSwubdeAdTi/s-l400.webp'
+)
+w2 = User.create!(
+    name:       'Fiona2',
+    user_type:  'walker',
+    email:      'fiona2@fiona.com',
+    password:   'chicken',
+    phone_no:   '0413020324',
+    address:    'North Sydney',
     image:      'https://i.ebayimg.com/images/g/aWoAAOSwubdeAdTi/s-l400.webp'
 )
 
@@ -49,12 +58,28 @@ d1 = Dog.create!(
   name:       'Boris',
   breed:      'Cavalier mix',
   bio:        "He's a good doggie",
+  owner_id:   o1.id,
   image:      'http://www.animal-photography.com/AP-1PBTCY-LR-wm.jpg'
 )
 d2 = Dog.create!(
   name:       'Coco',
   breed:      'Golden Retriever',
   bio:        "She's a good doggie",
+  owner_id:   o2.id,
+  image:      'https://usercontent2.hubstatic.com/14615541_f520.jpg'
+)
+d3 = Dog.create!(
+  name:       'Coco2',
+  breed:      'Golden Retriever',
+  bio:        "She's a good doggie",
+  owner_id:   o2.id,
+  image:      'https://usercontent2.hubstatic.com/14615541_f520.jpg'
+)
+d4 = Dog.create!(
+  name:       'Boris2',
+  breed:      'A dawg',
+  bio:        "Another good doggie",
+  owner_id:   o1.id,
   image:      'https://usercontent2.hubstatic.com/14615541_f520.jpg'
 )
 
@@ -84,5 +109,5 @@ puts "Created #{Photo.count} photos"
 # d2.photos << p2
 
 #seeding the association dogs and users... Many to many..
-d1.users << o1 << w1
-d2.users << o2 << w1
+d1.walked_by_users << w1 << w2
+d2.walked_by_users << w1 << w2

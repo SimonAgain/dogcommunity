@@ -1,15 +1,15 @@
-<h2>Owner Profile:</h2>
 
-<div class="top">
-  <div class="image_left">
+<div class="owner_home_top">
+  <h2> Owner Profile:</h2>
+  <div class="owner_image_left">
     <% if @user.image? %>
       <%= image_tag @user.image, alt: @user.name, class:'user_image' %>
     <% else %>
       <%= image_tag "https://upload.wikimedia.org/wikipedia/en/b/b1/Portrait_placeholder.png", alt:'blank photo', class:'user_image' %>
     <% end %>
   </div>
-  <div class="bio_right">
 
+  <div class="owner_bio_right">
     <p>
       <strong>Name:</strong>
       <%= @user.name %>
@@ -31,23 +31,23 @@
       <%= @user.bio %>
     </p>
 
-    <%= link_to 'Edit Profile', edit_user_path(@user.id), id:'edit_link' %>
-
-    <%= link_to 'Add a Dog', new_dog_path, id:'add_dog_link'  %>
-
-    <%= link_to 'Find Walker', users_path, id:'find_walker_link'  %>
-
-    <%= link_to 'Add Photo', new_photo_path, id: 'add_photo_link_o' %>
-
-
-
   </div> <!-- bio_right -->
-</div>
+</div> <!--top-->
 
-<div class="bottom">
+<div class="owner_links">
+  <%= link_to 'Edit Profile', edit_user_path(@user.id) %>
+
+  <%= link_to 'Add a Dog', new_dog_path  %>
+
+  <%= link_to 'Find Walker', users_path  %>
+
+  <%= link_to 'Add Photo', new_photo_path %>
+</div> <!-- owner_links -->
+
+<div class="bottom_dogs">
   <p>
     <strong>Your Dogs:</strong>
-    <% @user.dogs.each do |d| %>
+    <% @user.owned_dogs.each do |d| %>
     <div class="client_dogs">
       <% if d.image? %>
         <%= link_to image_tag(d.image, alt: d.name, class:'dog_thumbs'), dog_path(d.id)  %>

@@ -1,13 +1,17 @@
-<h1>Sign up</h1>
+
+<div class="sign_up">
+  <h2>Sign up</h2>
+</div>
 
 <% if @user.errors.full_messages.any? %>
   <ul>
     <% @user.errors.full_messages.each do |e| %>
-    <li><%= e %></li>
+    <li> <%= e %> </li>
     <% end %>
   </ul>
-  <% end %>
+<% end %>
 
+<div class="form_left">
   <%= form_for @user do |f| %>
 
     <%= f.label :name %> <br>
@@ -30,4 +34,9 @@
 
     <%= f.submit 'Sign Up'  %>
 
-  <% end %>
+  <% end %> <!-- form -->
+</div> <!-- form_left -->
+
+<%= image_tag 'dino_walk1.1.png', id:'pic_right' %>
+
+<br><br><br><br><br><br>

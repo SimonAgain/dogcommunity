@@ -1,14 +1,14 @@
-<h2>Walker Profile:</h2>
 
-<div class="top">
-  <div class="image_left">
+<div class="walker_home_top">
+  <h2>Walker Profile:</h2>
+  <div class="walker_image_left">
     <% if @user.image? %>
-      <%= image_tag @user.image, alt: @user.name, class:'user_image' %>
+      <%= image_tag @user.image, alt: @user.name, class:'walker_image' %>
     <% else %>
       <%= image_tag "https://upload.wikimedia.org/wikipedia/en/b/b1/Portrait_placeholder.png", alt:'blank photo', class:'user_image' %>
     <% end %>
   </div>
-  <div class="bio_right">
+  <div class="walker_bio_right">
 
     <p>
       <strong>Name:</strong>
@@ -31,19 +31,21 @@
       <%= @user.bio %>
     </p>
 
-    <%= link_to 'Edit Profile', edit_user_path(@user.id), id:'edit_link' %>
-
-    <%= link_to 'Add a Client', dogs_path, id:'add_client_link' %>
-
-    <%= link_to 'Add Photo', new_photo_path, id: 'add_photo_link_w' %>
-
   </div> <!-- bio_right -->
+</div> <!-- walker_home_top -->
+
+<div class="walker_links">
+  <%= link_to 'Edit Profile', edit_user_path(@user.id) %>
+
+  <%= link_to 'Add a Client', '/walk_dog' %>
+
+  <%= link_to 'Add Photo', new_photo_path %>
 </div>
 
-<div class="bottom">
+<div class="bottom_dogs">
   <p>
     <strong>Current Clients:</strong>
-    <% @user.dogs.each do |d| %>
+    <% @user.walked_dogs.each do |d| %>
     <div class="client_dogs">
       <%= link_to image_tag(d.image, alt: d.name, class:'dog_thumbs'), dog_path(d.id)  %>
       <br>

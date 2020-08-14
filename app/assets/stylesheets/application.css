@@ -13,12 +13,29 @@
  *= require_tree .
  *= require_self
  */
+ @import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap');
 
+div.content {
+  margin: auto;
+  max-width: 800px;
+  min-width: 800px;
+}
 h1 {
   text-align: center;
+  color: #f43a09;
+  background-color: #ffb766;
 }
 
 .login {
   text-align: right;
   color: green;
+}
+
+body {
+    background-color: #ffb766;
+    font-family: 'Rowdies', cursive;
+}
+
+.footer_bottom {
+  font-size: 11px;
 }

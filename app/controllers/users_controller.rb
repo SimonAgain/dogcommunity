@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
     if @user.persisted?
       session[:user_id] = @user.id # logs in the newly created account automaticially.
-      redirect_to root_path
+      redirect_to home_path
 
     else
       render :new # show the form again directly, no redirect. It will contain the user details that are filled out correctly.
@@ -24,11 +24,16 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find params[:id]
-    if @user.owner?
-      render :owner_show
-    else
-      render :walker_show
-    end
+
+    if @user.id == session[:user_id] #if the session user is wanting to go back to their own profile, then redirect to their home profile which has the edit buttons.
+      redirect_to home_path
+    else # otherwise send them to the view only profiles.
+      if @user.owner?
+        render :owner_show
+      else
+        render :walker_show
+      end
+    end# if
   end #show
 
   def edit
@@ -49,6 +54,13 @@ class UsersController < ApplicationController
 
   def destroy
   end
+
+  def link_dog # link the walker to the dog that was created by the owner.
+    dog = Dog.find params[:id]
+    user = User.find session[:id]
+    dog.users << user
+    redirect_to home_path # redirect back to the walker's home page.
+  end #link dog
 
   private
 

@@ -38,7 +38,7 @@
 <div class="bottom">
   <p>
     <strong>Current Clients:</strong>
-    <% @user.dogs.each do |d| %>
+    <% @user.walked_dogs.each do |d| %>
     <div class="client_dogs">
       <%= image_tag d.image, class:'dog_thumbs'  %>
       <br>

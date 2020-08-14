@@ -1,0 +1,12 @@
+
+
+
+<%=form_tag walk_dog_path do %>
+
+<%= label_tag 'Select a dog' %>
+<%= select_tag :dog_id, options_from_collection_for_select(@dogs, "id", "name") %>
+<br>
+
+<%= submit_tag 'Add Dog'  %>
+
+<% end %><!-- form for linking dog with walker. -->

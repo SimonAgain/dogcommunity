@@ -1,5 +1,7 @@
 class DogsController < ApplicationController
 
+  before_action :check_if_logged_in
+
   def new
     # only owners can create a new dog
     @dog = Dog.new
@@ -7,8 +9,7 @@ class DogsController < ApplicationController
 
   def create
     dog = Dog.create dog_params
-    owner = User.find session[:user_id]
-    dog.users << owner   # association
+    @current_user.owned_dogs << dog   # association
     redirect_to home_path
   end # create
 
@@ -29,6 +30,18 @@ class DogsController < ApplicationController
   def destroy
   end
 
+  def add_dog_to_walker
+    redirect_to(home_path) and return unless @current_user.walker?
+    @dogs = Dog.all - @current_user.walked_dogs
+  end
+
+  def process_add_dog_to_walker
+    redirect_to(home_path) and return unless @current_user.walker?
+    @current_user.walked_dogs << Dog.find(params[:dog_id])
+    redirect_to home_path
+  end
+
+ #User.last.walked_dogs.delete Dog.find(19)
   private
 
   def dog_params

@@ -1,32 +1,5 @@
 Rails.application.routes.draw do
 
-  # get 'photos/new'
-  # get 'photos/create'
-  # get 'photos/index'
-  # get 'photos/show'
-  # get 'photos/edit'
-  # get 'photos/update'
-  # get 'photos/destroy'
-  # get 'session/new'
-  # get 'session/create'
-  # get 'session/destroy'
-  # get 'dogs/new'
-  # get 'dogs/create'
-  # get 'dogs/index'
-  # get 'dogs/show'
-  # get 'dogs/edit'
-  # get 'dogs/update'
-  # get 'dogs/destroy'
-  # get 'users/new'
-  # get 'users/create'
-  # get 'users/index'
-  # get 'users/show'
-  # get 'users/edit'
-  # get 'users/update'
-  # get 'users/destroy'
-  # get 'session/new'
-  # get 'session/create'
-  # get 'session/destroy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root to: 'pages#welcome'
@@ -49,4 +22,10 @@ Rails.application.routes.draw do
 
   ## CRUD for photos ##
   resources :photos
+
+  ##custome route to associate a dog to a walker. ##
+
+  get '/walk_dog' => 'dogs#add_dog_to_walker', as: 'walk_dog'
+  post '/walk_dog' => 'dogs#process_add_dog_to_walker'
+
 end

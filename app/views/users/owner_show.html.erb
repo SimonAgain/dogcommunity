@@ -8,8 +8,8 @@
       <%= image_tag "https://upload.wikimedia.org/wikipedia/en/b/b1/Portrait_placeholder.png", alt:'blank photo', class:'user_image' %>
     <% end %>
   </div>
-  <div class="bio_right">
 
+  <div class="bio_right">
     <p>
       <strong>Name:</strong>
       <%= @user.name %>
@@ -41,7 +41,7 @@
 <div class="bottom">
   <p>
     <strong>Owner's Dogs:</strong>
-    <% @user.dogs.each do |d| %>
+    <% @user.owned_dogs.each do |d| %>
     <div class="client_dogs">
       <% if d.image? %>
         <%= link_to image_tag(d.image, alt: d.name, class:'dog_thumbs'), dog_path(d.id)  %>

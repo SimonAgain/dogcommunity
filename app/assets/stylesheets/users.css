@@ -1,21 +1,21 @@
 img.user_image {
   max-height: 300px;
   max-width: 300px;
+  padding:1px;
+  border:1px solid #505050;
+  background-color:#C0C0C0;
 }
 
-div.image_left, div.bio_right {
+div.image_left, div.bio_right { /*display for dogs show page also */
+  /* position: relative; */
   display: inline-block;
-    margin-left: 10px;
+  /* margin-left: 10px; */
 }
 
-div.bio_right {
+div.bio_right {   /*display for dogs show page also */
   max-width: 500px;
-  margin-left: 10px;
+  margin-left: 20px;
 }
-
-/* .bio  {
-  display: inline-block;
-} */
 
 div.client_dogs {    /* list of dogs AND names.*/
   display: inline-block;
@@ -24,41 +24,25 @@ div.client_dogs {    /* list of dogs AND names.*/
 }
 
 img.dog_thumbs {  /* the thumbnails of dogs */
-  max-height: 50px;
-  /* max-width: 73px; */
+  max-height: 70px;
+  padding:1px;
+  border:2px solid #505050;
+  background-color:#C0C0C0;
 }
 
-#edit_link {     /* Edit Profile link */
-  position: fixed;
-  top: 110px;
-  right: 10px;
+div.form_left, #pic_right { /* sign up form */
+  position: relative;
+  display: inline-block;
+  margin-left: 30px;
 }
 
-#add_dog_link { /* on owner page */
+#pic_right {     /* sign up form */
   position: fixed;
-  top: 129px;
-  right: 12px;
+  height: 300px;
+  margin-top: 75px;
+  margin-left: 55px;
 }
 
-#add_client_link { /* on walker page */
-  position: fixed;
-  top: 129px;
-  right: 12px;
-}
-
-#add_photo_link_w { /*on the walker home page */
-  position: fixed;
-  top: 150px;
-  right: 10px;
-}
-#add_photo_link_o { /*on the owner home page */
-  position: fixed;
-  top: 170px;
-  right: 10px;
-}
-
-#find_walker_link { /*on owner page */
-  position: fixed;
-  top: 150px;
-  right: 12px;
+div.sign_up {    /* sign up form */
+  margin-left: 30px;
 }

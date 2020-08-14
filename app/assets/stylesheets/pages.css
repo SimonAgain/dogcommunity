@@ -1,5 +1,58 @@
-#profile_link {
-  position: fixed;
-  top: 110px;
-  right: 10px;
+
+div.owner_links {
+  width: 100px;
+  position: relative;
+  top: -390px;
+  left: 708px;
+}
+
+div.owner_dogs {
+  position: relative;
+  top: -50px;
+}
+
+div.owner_home_top, div.walker_home_top {
+  position: relative;
+  display: inline-block;
+  margin-left: 30px;
+}
+
+div.walker_image_left, div.walker_bio_right, div.owner_image_left, div.owner_bio_right { /*display for dogs show page also */
+  position: relative;
+  display: inline-block;
+  /* margin-left: 10px; */
+}
+div.walker_image_left {
+  height: 250px;
+  width: 300px;
+  border: 1px solid black;
+
+}
+img.walker_image {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+  padding:1px;
+  border:1px solid #505050;
+  background-color:#C0C0C0;
+}
+
+div.walker_bio_right, div.owner_bio_right {   /*display for dogs show page also */
+  max-width: 500px;
+  margin-left: 50px;
+  top: -50px;
+}
+
+div.walker_links {
+  width: 100px;
+  position: relative;
+  top: -344px;
+  left: 708px;
+}
+
+div.bottom_dogs {
+  position: relative;
+  top: -50px;
+  left: 30px;
 }

@@ -3,7 +3,11 @@
 <%= form_for @photo do |f| %>
 
   <%= f.label :dog_id, 'Select a dog' %>
-  <%= f.select :dog_id, @user.dogs.pluck(:name, :id) %>
+  <% if @user.owner? %>
+    <%= f.select :dog_id, @user.owned_dogs.pluck(:name, :id) %>
+  <% else %>
+    <%= f.select :dog_id, @user.walked_dogs.pluck(:name, :id) %>
+  <% end %>
   <br><br>
 
   <%= f.label :image, 'Photo' %> <br>
@@ -13,3 +17,8 @@
   <%= f.submit 'Submit Edit'  %>
 
 <% end %>
+
+<div class="frame">
+  <%= image_tag 'dino_walk2.jpg' %>
+</div>
+<br><br><br><br><br><br>

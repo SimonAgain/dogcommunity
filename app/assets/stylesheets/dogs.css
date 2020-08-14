@@ -1,9 +1,18 @@
 img.profile_image {
   max-height: 300px;
+  max-width: 350px;
+  padding:1px;
+  border:2px solid #505050;
+  background-color:#C0C0C0;
 }
 
 img.dog_photos {
   max-height: 300px;
+  margin-left: 10px;
+  margin-top: 10px;
+  padding:1px;
+  border:1px solid #505050;
+  background-color:#C0C0C0;
 }
 
 #add_photo_link { /*on the dog show page */

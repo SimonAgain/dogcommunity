@@ -1,5 +1,8 @@
 class User < ApplicationRecord
-  has_and_belongs_to_many :dogs
+  
+  has_many :owned_dogs, class_name: 'Dog', foreign_key: 'owner_id'
+  has_and_belongs_to_many :walked_dogs, class_name: 'Dog'
+
 
   has_secure_password
 
